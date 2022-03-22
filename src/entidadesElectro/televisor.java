@@ -47,9 +47,10 @@ public class televisor extends electrodomestico {
         crearElectrodomestico();
         System.out.println("Ingrese las pulgadas :");
         setResolucion(leer.nextInt());
-        System.out.println("Tiene sintonizador TDT s/n :");
+        System.out.println("Tiene sintonizador TDT S/N :");
         String resp = leer.next();
-        if (resp.equals("s") || resp.equals("S")) {
+        resp=resp.toUpperCase();
+        if (resp.equals("S")) {
             setTDT(true);      
         }
     }

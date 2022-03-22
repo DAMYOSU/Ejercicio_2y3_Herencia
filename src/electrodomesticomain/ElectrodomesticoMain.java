@@ -14,10 +14,10 @@ public class ElectrodomesticoMain {
         entidadesElectro.lavadora lavadora = new lavadora();
         entidadesElectro.televisor televisor = new televisor();
        
-//        lavadora.creaLavadora();
-//        lavadora.precioFinal();
-//        televisor.creaTelevisor();
-//        televisor.precioFinal();
+        lavadora.creaLavadora();
+        lavadora.precioFinal();
+        televisor.creaTelevisor();
+        televisor.precioFinal();
         
         
         System.out.println("");
