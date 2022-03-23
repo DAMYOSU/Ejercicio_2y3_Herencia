@@ -1,4 +1,3 @@
-
 package entidadesElectro;
 
 import java.util.Scanner;
@@ -49,56 +48,28 @@ public class televisor extends electrodomestico {
         setResolucion(leer.nextInt());
         System.out.println("Tiene sintonizador TDT S/N :");
         String resp = leer.next();
-        resp=resp.toUpperCase();
+        resp = resp.toUpperCase();
         if (resp.equals("S")) {
-            setTDT(true);      
+            setTDT(true);
         }
     }
 
-    public double precioFinal() {
-          double prefinal=getPrecio();
-        if (getPeso()>=1 && getPeso()<20 ) { prefinal=prefinal+100;   
-        }else if (getPeso()>20 && getPeso()<50) { prefinal=prefinal+500;    
-        }else if (getPeso()>50 && getPeso()<80) { prefinal=prefinal+800;    
-        }else if (getPeso()>80) { prefinal=prefinal+1000;   
-        }
-         switch (getConsumoEnergetico()) {
-            case "A":
-                prefinal=prefinal+1000;
-                break;
-            case "B":
-                prefinal=prefinal+800;       
-                break;
-            case "C":
-                prefinal=prefinal+600;
-                break;
-            case "D":
-                prefinal=prefinal+500;
-                break;
-            case "E":
-                prefinal=prefinal+300;
-                break;
-            case "F":
-                prefinal=prefinal+100;
-                break;
-            default:
-                break;
-        }       
+    public double precioFinalTelevisor() {
+        double prefinal = precioFinal();
         if (isTDT() == true) {
-            prefinal=prefinal+500;
+            prefinal = prefinal + 500;
         }
-        if (resolucion >= 40) { prefinal=prefinal+(prefinal*30)/100;       
+        if (resolucion >= 40) {
+            prefinal = prefinal + (prefinal * 30) / 100;
         }
         setPrecio(prefinal);
         System.out.println("El valor final del Televisor es: $" + getPrecio());
         return prefinal;
-        }
-    
-    
+    }
 
     @Override
     public String toString() {
-        return "televisor " + " precio= " + precio + ", color= " + color + ", consumoEnergetico= " + consumoEnergetico + ", peso= " + peso + ", resolucion= " + resolucion + ", TDT=" + TDT +"\n"+ '}';
+        return "televisor " + " precio= " + precio + ", color= " + color + ", consumoEnergetico= " + consumoEnergetico + ", peso= " + peso + ", resolucion= " + resolucion + ", TDT=" + TDT + "\n" + '}';
     }
 
 }
